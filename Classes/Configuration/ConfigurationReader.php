@@ -456,7 +456,7 @@ class ConfigurationReader {
 	 */
 	protected function setRootPageId() {
 		if (!isset($this->configuration['pagePath']['rootpage_id'])) {
-			$this->setRootPageIdFromDomainRecord() || $this->setRootPageIdFromRootFlag() || $this->setRootPageIdFromTopLevelPages();
+			$this->setRootPageIdFromDomainRecord() || $this->setRootPageIdFromTopLevelPages() || $this->setRootPageIdFromRootFlag();
 		}
 		if ((int)$this->configuration['pagePath']['rootpage_id'] === 0) {
 			throw new \Exception('RealURL was not able to find the root page id for the domain "' . $this->utility->getCurrentHost() . '"', 1453732574);
